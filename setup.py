@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
 
-setup(name='django-ajax-block',
+setup(name='django-clever-pages',
     version='0.1',
     description='App for create pages',
     author='Pupkov Semen',
