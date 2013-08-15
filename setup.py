@@ -16,6 +16,5 @@ setup(name='django-clever-pages',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Framework :: Django',
     ]
 )
