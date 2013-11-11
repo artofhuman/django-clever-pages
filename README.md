@@ -1,6 +1,24 @@
 # Django Clever Pages
 
+# RU
+
+Простое приложение для организации статичных страниц.
+
+* Умеет строить древовидную структуру страниц на основе mptt.
+* Генерирует урл начиная от родительской страницы
+* Имеет drag-n-drop управление страницами в админке
+* Определены индексы для haystack, sphinx в планах
+* Метатеги на основе django-meta
+
+# EN
+
 Simple application that allows you to organize pages in a tree
+
+* Organize pages in tree structure
+* Generate page url, include all parents
+* Drag-n-dtop interface in admin
+* Include Search indices for haystack. Sphinx in plans
+* Include meta tags via djago-meta
 
 ## Instalation
 
@@ -22,14 +40,12 @@ Add it to end urls.py
     )
 
 You can define more templates in settings.py
-        
+
     PAGE_TEMPLATES = (
         ('contacts', u'Contacts')
     )
 
 # TODO
-
-- Add more description in readme
 - Add test
 - Add section about haystack
 - Add sphinx integration

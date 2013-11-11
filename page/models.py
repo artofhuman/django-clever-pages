@@ -22,6 +22,11 @@ class Page(MPTTModel):
     path = models.CharField(max_length=300, verbose_name=u'Полный путь', null=True, blank=True, help_text=u'Строится автоматически')
     template = models.CharField(max_length=50, verbose_name=u'Шаблон', null=True, blank=True)
     text = models.TextField(blank=True, verbose_name=u'Текст')
+
+    meta_title = models.CharField(max_length=300, verbose_name=u'Meta title', blank=True)
+    meta_keywords = models.CharField(max_length=300, verbose_name=u'Meta keywords', blank=True)
+    meta_description = models.TextField(blank=True, verbose_name=u'Meta description')
+
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=u'Дата создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name=u'Дата обновления')
 
