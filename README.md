@@ -28,23 +28,24 @@ Add to your `reqs.txt` file and make `pip install -r reqs.txt`
 
 Add this line to your settings.py
 
+~~~~ Python
     INSTALLED_APPS = (
         "page",
     )
-
+~~~~
 
 Add it to end urls.py
-
+~~~~ Python
     urlpatterns = patterns('',
         ('', include('page.urls'))
     )
-
+~~~~
 You can define more templates in settings.py
-
+~~~~ Python
     PAGE_TEMPLATES = (
         ('contacts', u'Contacts')
     )
-
+~~~~
 # TODO
 - Add test
 - Add section about haystack
