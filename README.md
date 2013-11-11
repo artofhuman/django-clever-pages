@@ -53,3 +53,7 @@ You can define more templates in settings.py
 - Add screenshot
 
 P.S. Sorry for my bad english :)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/artofhuman/django-clever-pages/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
