@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(name='django-clever-pages',
-    version='0.2',
+    version='0.2.1',
     description='App for create pages',
     author='Pupkov Semen',
     author_email='semen.pupvko@gmail.com',

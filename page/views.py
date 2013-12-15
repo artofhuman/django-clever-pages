@@ -11,16 +11,15 @@ class MetaTagsMexin(MetadataMixin):
     """ Mixin для отображения meta тегов из батарейки django-meta """
 
     def get_meta_description(self, context):
-        return self.get_object().meta_description
+        return self.page.meta_description
 
     def get_meta_keywords(self, context):
-        keywords_str = self.get_object().meta_keywords
+        keywords_str = self.page.meta_keywords
         if keywords_str:
             return [c.strip() for c in keywords_str.split(',')]
 
     def get_meta_title(self, context):
-        title = self.get_object().meta_title or self.title
-        return title
+        return self.page.meta_title or self.page.name
 
 
 class HomePageView(MetaTagsMexin, DetailView):
@@ -35,6 +34,7 @@ class HomePageView(MetaTagsMexin, DetailView):
 
     def get_object(self):
         page = get_object_or_404(Page, slug='home')
+        self.page = page
         return page
 
 
@@ -45,7 +45,6 @@ class PageDetailView(MetaTagsMexin, DetailView):
     template_name = 'page/default.html'
 
     def get_object(self):
-
         page = get_object_or_404(Page, path=self.request.path, active=1)
         self.page = page
         return page
