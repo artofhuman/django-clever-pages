@@ -48,16 +48,16 @@ You can define more templates in settings.py
 ~~~~
 
 Meta tags in base.html
-~~~~ Python
-    <head>
-        {% if meta.title %}
-          <title>{{ meta.title }}</title>
-        {% else %}
-            <title>{% block title %}{% endblock %}</title>
-        {% endif %}
-        {% if meta.description %}{% meta 'description' meta.description %}{% endif %}
-        {% if meta.keywords %}{% meta_list 'keywords' meta.keywords %}{% endif %}
-    </head>
+~~~~ Django
+<head>
+    {% if meta.title %}
+        <title>{{ meta.title }}</title>
+    {% else %}
+        <title>{% block title %}{% endblock %}</title>
+    {% endif %}
+    {% if meta.description %}{% meta 'description' meta.description %}{% endif %}
+    {% if meta.keywords %}{% meta_list 'keywords' meta.keywords %}{% endif %}
+</head>
 ~~~~
 
 # TODO
