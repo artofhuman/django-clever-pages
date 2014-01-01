@@ -1,4 +1,4 @@
-# Django Clever Pages
+# Django Clever Pages [![Tests](https://travis-ci.org/artofhuman/django-clever-pages.png)](https://travis-ci.org/artofhuman/django-clever-pages)
 
 # RU
 
