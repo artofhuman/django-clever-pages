@@ -1,1 +1,1 @@
-recursive-include page/templates *
+include README.mdrecursive-include page/templates *
