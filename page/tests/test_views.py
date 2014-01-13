@@ -8,8 +8,7 @@ from ..models import Page
 class PageViewsCase(TestCase):
 
     def setUp(self):
-        self.root_page = Page(name='root-page', slug='home')
-        self.root_page.save()
+        self.root_page = Page.objects.create(name='root-page', slug='home')
 
     def test_homepage_response(self):
         response = self.client.get(reverse('homepage'))

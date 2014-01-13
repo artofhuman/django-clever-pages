@@ -55,8 +55,7 @@ class Page(MPTTModel):
 
         return '/' + '/'.join(ontology) + '/'
 
-    def save(self):
-
+    def save(self, **kwargs):
         if not self.parent:
             self.path = '/'
         else:
