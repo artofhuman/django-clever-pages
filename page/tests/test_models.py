@@ -9,11 +9,9 @@ class PageModelsCase(TestCase):
         """
         Set tree we must get urls with parents
         """
-        root_page = Page(name='root', slug='home')
-        root_page.save()
-
-        second_page = Page(name='second page', slug='second-page', parent=root_page)
-        second_page.save()
+        root_page = Page.objects.create(name='root', slug='home')
+        second_page = Page.objects.create(name='second page', slug='second-page', parent=root_page)
 
         self.assertEqual('/', root_page.get_absolute_url())
         self.assertEqual('/second-page/', second_page.get_absolute_url())
+
