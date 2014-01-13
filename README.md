@@ -1,5 +1,15 @@
 # Django Clever Pages [![Tests](https://travis-ci.org/artofhuman/django-clever-pages.png)](https://travis-ci.org/artofhuman/django-clever-pages)
 
+# EN
+
+Simple application that allows you to organize pages in a tree
+
+* Organize pages in tree structure
+* Generate page url, include all parents
+* Drag-n-dtop interface in admin
+* Include Search indices for haystack. Sphinx in plans
+* Include meta tags via django-meta
+
 # RU
 
 Простое приложение для организации статичных страниц.
@@ -10,19 +20,13 @@
 * Определены индексы для haystack, sphinx в планах
 * Метатеги на основе django-meta
 
-# EN
-
-Simple application that allows you to organize pages in a tree
-
-* Organize pages in tree structure
-* Generate page url, include all parents
-* Drag-n-dtop interface in admin
-* Include Search indices for haystack. Sphinx in plans
-* Include meta tags via djago-meta
-
 ## Instalation
 
-Add to your `reqs.txt` file and make `pip install -r reqs.txt`
+## From Pypi
+
+    pip install django-clever-pages 
+
+## From github
 
     pip install git+git://github.com/artofhuman/django-clever-pages
 
