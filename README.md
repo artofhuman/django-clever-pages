@@ -68,11 +68,10 @@ Meta tags in base.html
 ~~~~
 
 # TODO
-- Add test
+- Add locales
 - Add section about haystack
 - Add sphinx integration
-- Add dependences
-- Add screenshot
+- Add Etag cache
 
 P.S. Sorry for my bad english :)
 
