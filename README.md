@@ -1,4 +1,7 @@
-# Django Clever Pages [![Tests](https://travis-ci.org/artofhuman/django-clever-pages.png)](https://travis-ci.org/artofhuman/django-clever-pages)
+# Django Clever Pages
+
+[![Tests](https://travis-ci.org/artofhuman/django-clever-pages.png)](https://travis-ci.org/artofhuman/django-clever-pages)
+[![Coverage Status](https://coveralls.io/repos/artofhuman/django-clever-pages/badge.png)](https://coveralls.io/r/artofhuman/django-clever-pages)
 
 # EN
 
