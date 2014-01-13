@@ -4,6 +4,6 @@ python:
 env:
   - DJANGO=1.6
 install:
-  - pip install -q Django==$DJANGO django-mptt --use-mirrors
+    - pip install -q Django==$DJANGO django-mptt django-meta --use-mirrors
 script:
   - python run_tests.py
