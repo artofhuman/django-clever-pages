@@ -51,14 +51,14 @@ Add it to end urls.py
 You can define more templates in settings.py
 ~~~~ Python
     PAGE_TEMPLATES = (
-        ('contacts', u'Contacts')
+        ('contacts', u'Contacts'),
     )
 ~~~~
 
 Meta tags in base.html
 ~~~~ Django
+{% load meta %}
 <head>
-    {% load meta %}
     <title>{{ meta.title }}</title>
     {% if meta.description %}{% meta 'description' meta.description %}{% endif %}
     {% if meta.keywords %}{% meta_list 'keywords' meta.keywords %}{% endif %}
