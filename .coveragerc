@@ -1,3 +1,2 @@
 [run]
-omit = *migrations*
-omit = *admin*
+omit = *migrations*, *admin*
