@@ -1,7 +1,12 @@
-# -*- coding: utf-8 -*-
-from mptt.models import MPTTModel, TreeForeignKey
+# coding: utf-8
 from django.db import models
 from django.conf import settings
+from django.dispatch import receiver
+from django.db.models.signals import pre_save
+from django.db.models.signals import post_save
+
+
+from mptt.models import MPTTModel, TreeForeignKey
 
 
 class Page(MPTTModel):
@@ -40,9 +45,12 @@ class Page(MPTTModel):
         return self.name
 
     def generate_path(self):
-        '''
-        Строит полный путь включая всех родителей
-        '''
+        """
+        Build full path for page includes all parents
+
+        Example:
+            page.generate_path() => '/root-page/this-page-slug/'
+        """
         ontology = []
         for item in self.parent.get_ancestors():
             if item.level != 0:
@@ -55,13 +63,17 @@ class Page(MPTTModel):
 
         return '/' + '/'.join(ontology) + '/'
 
-    def save(self, **kwargs):
-        if not self.parent:
-            self.path = '/'
-        else:
-            self.path = self.generate_path()
-
-        super(Page, self).save()
-
     def get_absolute_url(self):
         return self.path
+
+
+@receiver(pre_save, sender=Page)
+def generate_path(sender, instance, **kwargs):
+    instance.path = '/' if not instance.parent else instance.generate_path()
+
+@receiver(post_save, sender=Page)
+def regenerate_subpages_paths(sender, instance, **kwargs):
+    for sub_page in instance.get_descendants():
+        sub_page.path = sub_page.generate_path()
+        sub_page.save()
+
