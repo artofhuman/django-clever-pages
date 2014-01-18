@@ -38,6 +38,7 @@ Add this line to your settings.py
 ~~~~ Python
     INSTALLED_APPS = (
         "page",
+        "meta",
     )
 ~~~~
 
@@ -50,18 +51,15 @@ Add it to end urls.py
 You can define more templates in settings.py
 ~~~~ Python
     PAGE_TEMPLATES = (
-        ('contacts', u'Contacts')
+        ('contacts', u'Contacts'),
     )
 ~~~~
 
 Meta tags in base.html
 ~~~~ Django
+{% load meta %}
 <head>
-    {% if meta.title %}
-        <title>{{ meta.title }}</title>
-    {% else %}
-        <title>{% block title %}{% endblock %}</title>
-    {% endif %}
+    <title>{{ meta.title }}</title>
     {% if meta.description %}{% meta 'description' meta.description %}{% endif %}
     {% if meta.keywords %}{% meta_list 'keywords' meta.keywords %}{% endif %}
 </head>
