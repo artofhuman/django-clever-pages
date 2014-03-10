@@ -16,7 +16,7 @@ class PageIndex(SearchIndex, Indexable):
     def get_model(self):
         return Page
 
-    def index_queryset(self):
+    def index_queryset(self, *args, **kwargs):
         """
         Используется, когда весь индекс для модели обновляется.
         TODO: Check this
