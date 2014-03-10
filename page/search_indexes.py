@@ -1,19 +1,21 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
 
-#import datetime
-from haystack.indexes import *
-from haystack import site
+from haystack.indexes import SearchIndex, Indexable
 from models import Page
 
 
-class PageIndex(RealTimeSearchIndex, SearchIndex):
-    """Поисковой индекс по страницам"""
-    text = CharField(document=True, use_template=True)
+class PageIndex(SearchIndex, Indexable):
+    """ Haystack seach index """
     name = CharField(model_attr='name')
+    text = CharField(document=True, use_template=True)
     updated_at = DateTimeField(model_attr='updated_at')
 
-    def index_queryset(self):
-        """Используется, когда весь индекс для модели обновляется."""
-        return Page.objects.select_related().all()
+    def get_model(self):
+        return Page
 
-site.register(Page, PageIndex)
+    def index_queryset(self):
+        """
+        Используется, когда весь индекс для модели обновляется.
+        TODO: Check this
+        """
+        return Page.objects.select_related().all()
