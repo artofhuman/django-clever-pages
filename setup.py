@@ -13,7 +13,7 @@ with open('README.md') as f:
 
 setup(
     name='django-clever-pages',
-    version='0.2.5',
+    version='0.2.6',
     description='App for create pages',
     long_description=readme,
     author='Pupkov Semen',

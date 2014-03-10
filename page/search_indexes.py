@@ -1,6 +1,9 @@
 # coding: utf-8
 
-from haystack.indexes import SearchIndex, Indexable
+from haystack.indexes import SearchIndex
+from haystack.indexes import Indexable
+from haystack.indexes import CharField
+from haystack.indexes import DateTimeField
 from models import Page
 
 
