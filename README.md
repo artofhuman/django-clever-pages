@@ -6,6 +6,12 @@
 
 Simple application that allows you to organize pages in a tree
 
+# Idea
+
+Is located at the top level home page. Other pages are linked to the home page. Thus obtaining a tree. On the basis of field slug and parents pages generated path when saving. In the view gets page by unique path from the database.
+
+# Features
+
 * Organize pages in tree structure
 * Includes CKEditor
 * Auto build path by page slug
