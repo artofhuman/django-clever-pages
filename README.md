@@ -3,6 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/django-clever-pages.png)](http://badge.fury.io/py/django-clever-pages)
 [![Travis Build](https://travis-ci.org/artofhuman/django-clever-pages.png)](https://travis-ci.org/artofhuman/django-clever-pages)
 [![Coverage Status](https://coveralls.io/repos/artofhuman/django-clever-pages/badge.png)](https://coveralls.io/r/artofhuman/django-clever-pages)
+[![PyPi downloads](https://pypip.in/d/django-clever-pages/badge.png)](https://crate.io/packages/django-clever-pages)
 
 Simple application that allows you to organize pages in a tree
 
