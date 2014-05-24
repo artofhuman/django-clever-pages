@@ -1,9 +1,12 @@
 # coding: utf-8
+from __future__ import unicode_literals
+
 from django.db import models
 from django.conf import settings
 from django.dispatch import receiver
 from django.db.models.signals import pre_save
 from django.db.models.signals import post_save
+from django.utils.translation import ugettext as _
 
 
 from mptt.models import MPTTModel, TreeForeignKey
@@ -12,33 +15,32 @@ from mptt.models import MPTTModel, TreeForeignKey
 class Page(MPTTModel):
 
     page_templates = (
-        ('default', u'Стандартная страница'),
+        ('default', _('Static page')),
     )
 
     if hasattr(settings, 'PAGE_TEMPLATES'):
         page_templates += settings.PAGE_TEMPLATES
 
     parent = TreeForeignKey('self', blank=True, null=True,
-                            related_name='children', verbose_name=u'Родительская страница',
-                            help_text=u'Все страницы должны быть привязаны к главной. На нулевом уровне может находится только одна страница')
-    active = models.BooleanField(default=True, verbose_name=u'Активность')
-    name = models.CharField(max_length=300, verbose_name=u'Название')
-    slug = models.SlugField(max_length=200, unique=True, help_text=u'Для главной страницы значение должно быть home')
-    path = models.CharField(max_length=300, verbose_name=u'Полный путь', null=True, blank=True, help_text=u'Строится автоматически')
-    template = models.CharField(max_length=50, verbose_name=u'Шаблон', null=True, blank=True)
-    text = models.TextField(blank=True, verbose_name=u'Текст')
+                            related_name='children', verbose_name=_('Parent page'),
+                            help_text=_('All pages must linked to root page.'))
+    active = models.BooleanField(default=True, verbose_name=_('Active'))
+    name = models.CharField(max_length=300, verbose_name=_('Name'))
+    slug = models.SlugField(max_length=200, unique=True, help_text=_('For root page valuse must be home'))
+    path = models.CharField(max_length=300, verbose_name=_('Full path'), null=True, blank=True, help_text=_('Build automatic'))
+    template = models.CharField(max_length=50, verbose_name=_('Template'), null=True, blank=True)
+    text = models.TextField(blank=True, verbose_name=_('Text'))
 
-    meta_title = models.CharField(max_length=300, verbose_name=u'Meta title', blank=True)
-    meta_keywords = models.CharField(max_length=300, verbose_name=u'Meta keywords', blank=True)
-    meta_description = models.TextField(blank=True, verbose_name=u'Meta description')
+    meta_title = models.CharField(max_length=300, verbose_name=_('Meta title'), blank=True)
+    meta_keywords = models.CharField(max_length=300, verbose_name=_('Meta keywords'), blank=True)
+    meta_description = models.TextField(blank=True, verbose_name=_('Meta description'))
 
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name=u'Дата создания')
-    updated_at = models.DateTimeField(auto_now=True, verbose_name=u'Дата обновления')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Create date'))
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=_('Update date'))
 
     class Meta:
         db_table = 'page'
-        verbose_name = u'Статичная страница'
-        verbose_name_plural = u'Статичные страницы'
+        verbose_name = _('Static page')
         ordering = ['tree_id', 'lft']
 
     def __unicode__(self):
