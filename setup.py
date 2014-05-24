@@ -27,6 +27,11 @@ setup(
         'feincms==1.9.3'
     ],
     packages=find_packages(),
+    package_data={
+        'page': [
+            'locale/*/*/*.*',
+        ]
+    },
     classifiers=(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
