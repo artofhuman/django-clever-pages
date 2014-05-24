@@ -7,11 +7,13 @@ from django.dispatch import receiver
 from django.db.models.signals import pre_save
 from django.db.models.signals import post_save
 from django.utils.translation import ugettext as _
+from django.utils.encoding import python_2_unicode_compatible
 
 
 from mptt.models import MPTTModel, TreeForeignKey
 
 
+@python_2_unicode_compatible
 class Page(MPTTModel):
 
     page_templates = (
@@ -43,7 +45,7 @@ class Page(MPTTModel):
         verbose_name = _('Static page')
         ordering = ['tree_id', 'lft']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def generate_path(self):
