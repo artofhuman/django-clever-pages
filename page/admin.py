@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Page
 from django import forms
 from ckeditor.widgets import CKEditorWidget
-from feincms.admin import editor
+from feincms.admin import tree_editor
 
 
 class PageAdminForm(forms.ModelForm):
@@ -15,7 +15,7 @@ class PageAdminForm(forms.ModelForm):
         self.fields['text'].widget = CKEditorWidget(config_name='default')
 
 
-class PageAdmin(editor.TreeEditor):
+class PageAdmin(tree_editor.TreeEditor):
     form = PageAdminForm
     list_display = ('name', 'slug', 'path', 'active', 'created_at', 'updated_at', )
     prepopulated_fields = {'slug': ('name',)}

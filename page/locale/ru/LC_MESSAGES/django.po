@@ -1,0 +1,79 @@
+# Copyright (C) 2014
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <semen.pupkov@gmail.com>, 2014.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.2.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-24 17:38+0600\n"
+"PO-Revision-Date: 2014-05-24 17:38+0600\n"
+"Last-Translator: Semyon Pupkov <semen.Pupkov@gmail.com>\n"
+"Language-Team: Russian\n"
+"Language: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: models.py:20 models.py:45
+msgid "Static page"
+msgstr "Статичная страница"
+
+#: models.py:27
+msgid "Parent page"
+msgstr "Родительская страница"
+
+#: models.py:28
+msgid "All pages must linked to root page."
+msgstr "Все страницы должны быть привязаны к корневой странице"
+
+#: models.py:29
+msgid "Active"
+msgstr "Активность"
+
+#: models.py:30
+msgid "Name"
+msgstr "Название"
+
+#: models.py:31
+msgid "For root page valuse must be home"
+msgstr "Для корневой страницы значение должно быть home"
+
+#: models.py:32
+msgid "Full path"
+msgstr "Полный путь"
+
+#: models.py:32
+msgid "Build automatic"
+msgstr "Строится автоматически"
+
+#: models.py:33
+msgid "Template"
+msgstr "Шаблон"
+
+#: models.py:34
+msgid "Text"
+msgstr ""
+
+#: models.py:36
+msgid "Meta title"
+msgstr "Meta title"
+
+#: models.py:37
+msgid "Meta keywords"
+msgstr "Meta keywords"
+
+#: models.py:38
+msgid "Meta description"
+msgstr "Meta description"
+
+#: models.py:40
+msgid "Create date"
+msgstr "Data создания"
+
+#: models.py:41
+msgid "Update date"
+msgstr "Дата обновления"

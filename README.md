@@ -35,8 +35,10 @@ Add this line to your settings.py
 
 ~~~~ Python
     INSTALLED_APPS = (
-        "page",
-        "meta",
+        'feincms',
+        'meta',
+        'ckeditor',
+        'page',
     )
 ~~~~
 

@@ -24,9 +24,14 @@ setup(
     install_requires=[
         'django-mptt>=0.6.0',
         'django-meta>=0.0.3',
-        'feincms==1.7.7'
+        'feincms==1.9.3'
     ],
     packages=find_packages(),
+    package_data={
+        'page': [
+            'locale/*/*/*.*',
+        ]
+    },
     classifiers=(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',

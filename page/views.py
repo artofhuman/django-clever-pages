@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 from django.shortcuts import get_object_or_404
 from django.views.generic.detail import DetailView
@@ -8,7 +9,7 @@ from meta.views import MetadataMixin
 
 
 class MetaTagsMexin(MetadataMixin):
-    """ Mixin для отображения meta тегов из батарейки django-meta """
+    """ Mixin for show meta tegs from django-meta """
 
     def get_meta_description(self, context):
         return self.page.meta_description
