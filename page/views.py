@@ -46,7 +46,7 @@ class PageDetailView(MetaTagsMexin, DetailView):
     template_name = 'page/default.html'
 
     def get_object(self):
-        page = get_object_or_404(Page, path=self.request.path, active=1)
+        page = get_object_or_404(self.model, path=self.request.path, active=1)
         self.page = page
         return page
 
