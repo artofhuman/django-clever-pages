@@ -2,3 +2,5 @@ django_clever_pages.egg-info
 dist
 *.pyc
 .coverage
+build
+ENV
