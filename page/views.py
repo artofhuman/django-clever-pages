@@ -34,7 +34,7 @@ class HomePageView(MetaTagsMexin, DetailView):
         return context
 
     def get_object(self):
-        page = get_object_or_404(Page, slug='home')
+        page = get_object_or_404(self.model, slug='home')
         self.page = page
         return page
 
